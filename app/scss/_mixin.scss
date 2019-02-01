@@ -12,7 +12,7 @@
 
 @mixin breakpoint($class) {
   @if $class == mobile {
-    @media (max-width: 704px) { @content; }
+    @media (max-width: 767px) { @content; }
   }
 
   @else if $class == small {
@@ -27,13 +27,12 @@
     @media all and (min-width: 1080px) and (max-width: 1124px) { @content; }
   }
 
-  @else if $class == portrait {
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2) { @content; }
+  @else if $class == tablet {
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1023px) and (-webkit-min-device-pixel-ratio: 2) { @content; }
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1023px) { @content; }
   }
 
-  @else if $class == landscape {
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2) { @content; }
-  }
+ 
  
   @else {
     @warn "Breakpoint mixin supports: small, medium, large, portrait, landscape";

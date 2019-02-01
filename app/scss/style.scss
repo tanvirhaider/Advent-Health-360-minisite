@@ -6,7 +6,11 @@
 body {
     position: absolute;
     width: 100%;
-   // height: 100%;
+    height: 100%;
+
+    @include breakpoint (mobile) {
+        height: unset;
+    }
 
     .bg {
         position: absolute;
@@ -48,6 +52,125 @@ body {
         right: 0px;
         margin-left: auto;
         margin-right: auto;
+        z-index: 99999;
+
+        @include breakpoint (mobile) {
+            height: 100%;
+            pointer-events: none;
+        }
+
+        #dropdown {
+            position: relative;
+            top: 60px;
+            left: -15px;
+            visibility: hidden;
+            transition: ease 0.5s;
+
+            .mobile-dropdown-logo {
+                visibility: hidden;
+                position: absolute;
+                height: 155px;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: contain;
+                left: 0px;
+                right: 0px;
+                margin-left: auto;
+                margin-right: auto;
+
+                @include breakpoint (mobile) {
+                    visibility: visible;
+                    background-image: url(../assets/images/mobile-logo@2x.png);
+                    width: 234px;
+                    pointer-events: auto;
+                    
+                }
+            }
+
+            @include breakpoint (mobile) {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(#005e97,1) 0%,rgba(110,44,99,1) 50%); 
+                top: 0px;
+                left: 0px;
+                z-index: 9999;
+                pointer-events: none;
+            }
+
+            ul {
+                list-style-type: none;
+
+                @include breakpoint (mobile) {
+                    position: absolute;
+                    width: 100%;
+                    height: 300px;
+                    top: 200px;
+                }
+                
+                li {
+                    color: black;
+                    font-family: Arial, Helvetica, sans-serif;
+                    height: 55px;
+                    width: 216px;
+                    background-color: white;
+                    position: relative;
+                    padding-left: 15px;
+                    padding-top: 20px;
+                    box-sizing: border-box;
+                    margin-bottom: 2px;
+                    pointer-events: auto;
+
+                    &:after {
+                        content: "";
+                        background-image: url(../assets/images/arrow-right-black.svg);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: 10px;
+                        
+                        
+
+                        @include breakpoint (mobile) {
+                            background-image: url(../assets/images/arrow-right.svg);
+                            top: 25px;
+                            right: 20px;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: rgba(rgb(215, 238, 252),1);
+                    }
+
+                    @include breakpoint (mobile) {
+                        background-color: unset;
+                        color: white;
+                        width: 100%;
+                        padding-left: 30px;
+                        font-size: 24px;
+                        height: 75px;
+                        pointer-events: auto;
+                        margin-top: unset;
+
+                        &:first-child {
+                            border-bottom: 3px solid rgba(0,0,0,0.1);
+                           // margin-bottom: 20px;
+                        }
+
+                        &:hover {
+                          //  background-color: rgba(rgb(215, 238, 252),1);
+                          //  color: #005F97;
+
+                            background-color: unset;
+                            color: white;
+                        }
+                    }
+
+                }
+            }
+        }
 
         .homesitelinkout {
             color: white;
@@ -70,16 +193,25 @@ body {
       
 
         .menuicon {
-            width: 20px;
+            width: 25px;
             height: 20px;
             background-size: contain;
-            background-repeat: no-repeat;
+           // background-repeat: no-repeat;
             background-position: 50% 50%;
             background-image: url(../assets/images/menu-bar.svg);
-            right: 20px;
-            top: 20px;
+            top: 30px;
             position: absolute;
             cursor: pointer;
+            pointer-events: auto;
+
+            @include breakpoint (mobile) {
+               // display: none;
+                top: 20px;
+                right: 20px;
+                width: 20px;
+                height: 20px;
+                
+            }
         }
     
     }
@@ -98,10 +230,14 @@ body {
         max-width: 940px;
 
         @include breakpoint (mobile) {
-           // display: none;
            width: calc(100% - 30px);
            margin-top: 60px;
         }
+
+        @include breakpoint (tablet) {
+            width: calc(100% - 30px);
+           // margin-top: 60px;
+         }
 
         .hero-box {
             position: absolute;
@@ -114,6 +250,16 @@ body {
             @include breakpoint (mobile) {
                 background-color: unset;
                 border: unset;
+            }
+
+            @include breakpoint (tablet) {
+                background-color: unset;
+                border: unset;
+                width: 92%;
+                left: 0px;
+                right: 0px;
+                margin-left: auto;
+                margin-right: auto;
             }
             
 
@@ -132,11 +278,27 @@ body {
                     height: 620px;
                     width: 100%;
                 }
+
+               
                 
                 li {
+                    box-sizing: border-box;
+
+                    &:hover {
+                       
+                        .thumb {
+                            border: 3px solid #65F1DE;
+                            transition: ease 0.3s;
+                        }
+                    }
 
                     @include breakpoint (mobile) {
                         width: 50%;
+                        position: relative;
+                    }
+
+                    @include breakpoint (tablet) {
+                        width: 25%;
                         position: relative;
                     }
 
@@ -150,14 +312,22 @@ body {
                         box-sizing: border-box;
                         margin-left: 15px;
                         margin-right: 15px;
+                        pointer-events: none;
 
                         @include breakpoint (mobile) {
                             width: calc(100% - 6px);
                             height: 150px;
                             margin-left: auto;
                             margin-right: auto;
-                           // margin-left: 3px;
-                           // margin-right: 3px;
+                            margin-top: 3px;
+                            margin-bottom: 3px;
+                         }
+
+                         @include breakpoint (tablet) {
+                            width: calc(100% - 6px);
+                            height: 170px;
+                            margin-left: auto;
+                            margin-right: auto;
                             margin-top: 3px;
                             margin-bottom: 3px;
                          }
@@ -191,6 +361,16 @@ body {
 
                             @include breakpoint (mobile) {
                                 height: 70px;
+                                width: 100%;
+                                background-size: cover;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                top: 0px;
+                                bottom: 0px;
+                            }
+
+                            @include breakpoint (tablet) {
+                                height: 80px;
                                 width: 100%;
                                 background-size: cover;
                                 margin-top: auto;
@@ -263,9 +443,14 @@ body {
             z-index: 999;
 
             @include breakpoint (mobile) {
-               // display: none;
                 background-image: url(../assets/images/mobile-logo@2x.png);
                 top: -200px;
+                width: 234px;
+            }
+
+            @include breakpoint (tablet) {
+                background-image: url(../assets/images/mobile-logo@2x.png);
+                top: -120px;
                 width: 234px;
             }
 
@@ -284,6 +469,7 @@ body {
             font-size: 22px;
             color: #009FDF;
             cursor: pointer;
+            background-color: white;
 
             @include breakpoint (mobile) {
                 bottom: unset;
@@ -381,23 +567,35 @@ body {
 
 
     footer {
-        color: white;
-        position: relative;
-        top: 100px;
-       // bottom: 50px;
-        width: 100%;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 400;
-        background-color: rgba(0,0,0,0);
+       
+        .footercopy {
+            color: white;
+            position: relative;
+            width: 100%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            background-color: rgba(0,0,0,0);
+            top: 50px;
 
-        @include breakpoint (mobile) {
+            @include breakpoint (mobile) {
+                color: rgb(255, 255, 255);
+                top: unset;
+                bottom: 20px;
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                letter-spacing: 1px;
+                //top: unset;
+            }
+        }
 
-            margin-bottom: 140px;
-            top: -25px;
+        .homesitelinkout  {
+            display: none;
 
-
-            .homesitelinkout {
+            @include breakpoint (mobile) {
+                display: block;
                 color: white;
                 background-color: #005F97;
                 width: 200px;
@@ -412,18 +610,11 @@ body {
                 margin-left: auto;
                 margin-right: auto;
             }
-    
-            .footercopy {
-                color: rgb(255, 255, 255);
-                top: 55px;
-                position: absolute;
-                width: 100%;
-                text-align: center;
-                font-size: 12px;
-                letter-spacing: 1px;
-            }
         }
 
-       
+        @include breakpoint (mobile) {
+            margin-bottom: 140px;
+            top: -25px;          
+        }
     }
 }
