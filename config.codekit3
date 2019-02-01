@@ -130,6 +130,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/app/assets/images/mobile-logo@2x.png": {
+		"ft": 32768,
+		"iS": 19399,
+		"oA": 0,
+		"oAP": "/build/assets/images/mobile-logo@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
 	"/app/assets/images/parade.png": {
 		"ft": 32768,
 		"iS": 38749,
