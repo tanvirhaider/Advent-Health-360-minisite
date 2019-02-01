@@ -1,0 +1,186 @@
+/* ------------------------------------------------------------ */
+/* -----> RESET.CSS INCLUDED HERE TO REDUCE SERVER CALLS <----- */
+/* ------------------------------------------------------------ */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video {
+  display: block; }
+
+a img {
+  border: 0; }
+
+/* ------------------------------------------------------------------- */
+/* -----> BODY STYLE TO PREVENT FONT SCALLING ON MOBILE DEVICES <----- */
+/* ------------------------------------------------------------------- */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+  zoom: 100%; }
+
+body .bg .bgshade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #6e2c63 100%); }
+
+body .bg .bgimg {
+  background-image: url(../assets/images/bg-img.jpg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+body .hero {
+  position: relative;
+  left: 0px;
+  right: 0px;
+  top: 140px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 665px;
+  max-width: 940px; }
+  body .hero .hero-box {
+    position: absolute;
+    border: 3px solid #65F1DE;
+    width: 100%;
+    height: 530px;
+    background-color: rgba(110, 44, 99, 0.75); }
+    body .hero .hero-box ul {
+      list-style-type: none;
+      display: flex;
+      width: 100%;
+      height: 430px;
+      flex-wrap: wrap;
+      position: absolute;
+      justify-content: center;
+      align-content: space-around;
+      top: 60px; }
+      body .hero .hero-box ul li .thumb {
+        width: 180px;
+        height: 185px;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: relative;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-left: 15px;
+        margin-right: 15px; }
+        body .hero .hero-box ul li .thumb .title {
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          font-size: 12px;
+          width: 80%;
+          line-height: 14px;
+          text-align: center;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+          position: absolute;
+          left: 0px;
+          right: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          top: 15px; }
+        body .hero .hero-box ul li .thumb .thumbImg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          overflow: hidden;
+          cursor: pointer; }
+        body .hero .hero-box ul li .thumb .btn {
+          border-radius: 20px;
+          width: 70px;
+          height: 25px;
+          position: absolute;
+          left: 0px;
+          right: 0px;
+          margin-left: auto;
+          margin-right: auto;
+          bottom: 10px;
+          background: linear-gradient(-90deg, #5DB183 0%, #A7CC74 100%);
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          color: white;
+          font-size: 14px;
+          cursor: pointer; }
+          body .hero .hero-box ul li .thumb .btn:hover {
+            background: #5DB183; }
+        body .hero .hero-box ul li .thumb #thumb-img-0 {
+          background-image: url(../assets/images/garage@2x.png); }
+        body .hero .hero-box ul li .thumb #thumb-img-1 {
+          background-image: url(../assets/images/fanzone@2x.png); }
+        body .hero .hero-box ul li .thumb #thumb-img-2 {
+          background-image: url(../assets/images/driver-introductions@2x.png); }
+        body .hero .hero-box ul li .thumb #thumb-img-3 {
+          background-image: url(../assets/images/parade@2x.png); }
+        body .hero .hero-box ul li .thumb #thumb-img-4 {
+          background-image: url(../assets/images/start-engines@2x.png); }
+        body .hero .hero-box ul li .thumb #thumb-img-5 {
+          background-image: url(../assets/images/pit-road@2x.png); }
+        body .hero .hero-box ul li .thumb #thumb-img-6 {
+          background-image: url(../assets/images/hot-pass@2x.png); }
+        body .hero .hero-box ul li .thumb #thumb-img-7 {
+          background-image: url(../assets/images/victory-lane@2x.png); }
+  body .hero .hero-logo {
+    background-image: url(../assets/images/logo@2x.png);
+    width: 321px;
+    height: 155px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    top: -102px;
+    z-index: 999; }
+  body .hero .hero-playall {
+    width: 240px;
+    height: 57px;
+    position: absolute;
+    border-radius: 40px;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 100px;
+    font-size: 22px;
+    color: #009FDF;
+    cursor: pointer; }
+
+body .sweeps {
+  position: relative;
+  max-width: 940px;
+  width: 100%;
+  background-image: url(../assets/images/bottomImg.png);
+  background-size: cover;
+  background-position: 100% 100%;
+  height: 82px;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  box-sizing: border-box; }
+
+body footer {
+  color: white;
+  position: relative;
+  top: 100px;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400; }
