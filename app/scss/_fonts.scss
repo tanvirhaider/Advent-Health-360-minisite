@@ -1,0 +1,27 @@
+
+// custom fonts 
+
+@font-face {
+  font-family: 'Proxima-Regular';
+  src:  url('../assets/fonts/ProximaNovaW01-Regular.woff2') format('woff2'),
+        url('../assets/fonts/ProximaNovaW01-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima-Thin';
+    src:  url('../assets/fonts/ProximaNovaW01-Thin.woff2') format('woff2'),
+          url('../assets/fonts/ProximaNovaW01-Thin.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+  }
+
+// @font-face {
+//   font-family: 'Apercu Pro';
+//   src:  url('../assets/fonts/ApercuPro-Medium.woff2') format('woff2'),
+//         url('../assets/fonts/ApercuPro-Medium.woff') format('woff');
+//   font-weight: 500;
+//   font-style: normal;
+// }
+

@@ -15,14 +15,12 @@ function init () {
 	var mBtn = document.getElementById("menuicon");
 	var menuStats = false;
 	mBtn.addEventListener("click", function() {
-		console.log("yo MTV");
+		//console.log("yo MTV");
 		if (menuStats == false) {
-			document.getElementById("dropdown").style.visibility = "visible";
-			menuStats = true;
+			showHideDD ("show");
 		}
 		else {
-			document.getElementById("dropdown").style.visibility = "hidden";
-			menuStats = false;
+			showHideDD ("hide");
 		}
 		
 	});
@@ -36,12 +34,23 @@ function init () {
 	function whenThumbClicked (event) {
 		//console.log(event.target);
 
-		console.log(event.target.dataset.indexNumber);
+		//console.log(event.target.dataset.indexNumber);
 		var vidIndex = Number(event.target.dataset.indexNumber);
 		var vidURL = vimeoURLlist[vidIndex];
-
+		showHideDD ("hide");
 		window.open(vidURL);
 		
+	}
+
+	function showHideDD ( whichOne ) {
+		if (whichOne == "show") {
+			document.getElementById("dropdown").style.visibility = "visible";
+			menuStats = true;
+		}
+		else {
+			document.getElementById("dropdown").style.visibility = "hidden";
+			menuStats = false;
+		}
 	}
 
 }

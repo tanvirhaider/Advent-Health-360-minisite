@@ -9,6 +9,82 @@
 	],
 "creatorBuild": "28905",
 "files": {
+	"/app/assets/fonts/ProximaNovaW01-Regular.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Regular.eot",
+		"oF": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Regular.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Regular.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Regular.ttf",
+		"oF": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Regular.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Regular.woff",
+		"oF": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Regular.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Regular.woff2",
+		"oF": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Thin.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Thin.eot",
+		"oF": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Thin.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Thin.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Thin.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Thin.ttf",
+		"oF": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Thin.woff": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Thin.woff",
+		"oF": 0
+		},
+	"/app/assets/fonts/ProximaNovaW01-Thin.woff2": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/build/assets/fonts/ProximaNovaW01-Thin.woff2",
+		"oF": 0
+		},
 	"/app/assets/images/arrow-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -269,6 +345,17 @@
 		"oT": 1,
 		"q": 100
 		},
+	"/app/assets/images/sweepsbgmobile.jpg": {
+		"ft": 16384,
+		"iS": 4590,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/build/assets/images/sweepsbgmobile.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
 	"/app/assets/images/victory-lane.png": {
 		"ft": 32768,
 		"iS": 46096,
@@ -307,6 +394,19 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 1
+		},
+	"/app/scss/_fonts.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/build/scss/_fonts.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"/app/scss/_mixin.scss": {
 		"aP": 0,
