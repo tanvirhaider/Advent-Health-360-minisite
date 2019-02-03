@@ -1,18 +1,6 @@
 
 
-var vimeoURLlist = [
-	"https://vimeo.com/314887001",
-	"https://vimeo.com/314890554",
-	"https://vimeo.com/314891691",
-	"https://vimeo.com/314891724",
-	"https://vimeo.com/314891741",
-	"https://vimeo.com/314891771",
-	"https://vimeo.com/314891809",
-	"https://vimeo.com/314891829"
-];
 
-var clientURL = "https://www.adventhealth.com";
-var contentURL = "http://YourChampionforHealth.com"
 
 function openURL (url,trackingString) {
 	window.open(url);
@@ -29,34 +17,24 @@ function init () {
 	var ddclient = document.getElementById("dropdown-client");
 	var ddsweeps = document.getElementById("dropdown-sweeps");
 	var ddlogo = document.getElementById("dropdown-logo");
+	var hlogo = document.getElementById("hero-logo");
+	var hlink = document.getElementById("home-link");
 
-	ddclient.addEventListener("click", function() {
-		//console.log("dropdown client click out");
-		openURL (clientURL, "client-logo");
-	});
-
-	ddlogo.addEventListener("click", function() {
-		//console.log("dropdown logo");
-		openURL (clientURL, "client-logo");
-	});
-
-	ddsweeps.addEventListener("click", function() {
-		//console.log("dropdown sweeps");
-		openURL (contentURL, "open-sweeps");
-	});
-
-	bottomclientClickOut.addEventListener("click", function() {
-		//console.log("bottom of the page client click out");
-		openURL (clientURL, "client-logo");
-	});
+	ddclient.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+	ddlogo.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+	hlogo.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+	hlink.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+	ddsweeps.addEventListener("click", function() {openURL (siteData.sweepsURL, "open-sweeps");});
+	bottomclientClickOut.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
 
 	heroPlayAllBtn.addEventListener("click", function() {
-		console.log("hero play all");
+		//console.log("hero play all");
+		openURL(siteData.vimeoAlbumURL, "play-all");
 	});
 
 	bottomPageSweeps.addEventListener("click", function() {
 		//console.log("bottom of the page sweeps");
-		openURL (contentURL, "open-sweeps");
+		openURL (siteData.sweepsURL, "open-sweeps");
 	});
 
 	var menuStats = false;
@@ -84,13 +62,9 @@ function init () {
 	}
 
 	function whenThumbClicked (event) {
-		//console.log(event.target);
-
-		//console.log(event.target.dataset.indexNumber);
 		var vidIndex = Number(event.target.dataset.indexNumber);
-		var vidURL = vimeoURLlist[vidIndex];
+		var vidURL = siteData.vimeoURLlist[vidIndex];
 		showHideDD ("hide");
-		//window.open(vidURL);
 		openURL (vidURL, "vid-" + vidIndex);
 		
 	}

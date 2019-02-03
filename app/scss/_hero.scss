@@ -247,8 +247,9 @@
         margin-right: auto;
         top: -102px;
         z-index: 999;
-       opacity: 0;
-       animation: 0.5s fadein 0.75s forwards;
+        opacity: 0;
+        animation: 0.5s fadein 0.75s forwards;
+        cursor: pointer;
 
         @include breakpoint (mobile) {
             background-image: url(../assets/images/mobile-logo@2x.png);

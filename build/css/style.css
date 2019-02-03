@@ -202,7 +202,8 @@ body {
       border-radius: 15px;
       top: 30px;
       right: 0px;
-      letter-spacing: 1px; }
+      letter-spacing: 1px;
+      cursor: pointer; }
       @media (max-width: 767px) {
         body nav .homesitelinkout {
           display: none; } }
@@ -479,7 +480,8 @@ body {
       z-index: 999;
       opacity: 0;
       -webkit-animation: 0.5s fadein 0.75s forwards;
-              animation: 0.5s fadein 0.75s forwards; }
+              animation: 0.5s fadein 0.75s forwards;
+      cursor: pointer; }
       @media (max-width: 767px) {
         body .hero .hero-logo {
           background-image: url(../assets/images/mobile-logo@2x.png);
