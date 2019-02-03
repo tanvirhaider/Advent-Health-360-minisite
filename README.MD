@@ -17,7 +17,7 @@
 	<meta property="og:url" content="http://www.DaytonaRaceDay.com">
 ```
 
-please update the twitter and Open Graph data at the <head> of the index.html
+please update the twitter and Open Graph data at the "head" of the index.html
 
 ## Updating URLS
 
@@ -40,7 +40,7 @@ please update the twitter and Open Graph data at the <head> of the index.html
 	} </script>
 ```
 
-please update the siteData javacript object located in the <head> of the index.html file
+please update the siteData javacript object located in the "head" of the index.html file
 
 ## Updating Google Analytics
 
@@ -48,7 +48,7 @@ please update the siteData javacript object located in the <head> of the index.h
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125434262-2"></script>
 	<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125434262-2'); </script>
 ```
-please update the UA-XXXXXXXXX value on both of the scripts (you can find this in the <head> of the index.html)
+please update the UA-XXXXXXXXX value on both of the scripts (you can find this in the "head" of the index.html)
 
 
 ## Authors
