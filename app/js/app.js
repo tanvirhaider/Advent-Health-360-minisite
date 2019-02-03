@@ -9,6 +9,9 @@ function openURL (url,trackingString) {
 }
 
 function init () {
+
+	var menuStats = false;
+
 	var mBtn = document.getElementById("menuicon");
 	var cBtn = document.getElementById("closeBtn");
 	var heroPlayAllBtn = document.getElementById("hero-play-all");
@@ -19,33 +22,28 @@ function init () {
 	var ddlogo = document.getElementById("dropdown-logo");
 	var hlogo = document.getElementById("hero-logo");
 	var hlink = document.getElementById("home-link");
+	
 
 	ddclient.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+
 	ddlogo.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+
 	hlogo.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+
 	hlink.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
+
 	ddsweeps.addEventListener("click", function() {openURL (siteData.sweepsURL, "open-sweeps");});
+
 	bottomclientClickOut.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
 
-	heroPlayAllBtn.addEventListener("click", function() {
-		//console.log("hero play all");
-		openURL(siteData.vimeoAlbumURL, "play-all");
-	});
+	heroPlayAllBtn.addEventListener("click", function() {openURL(siteData.vimeoAlbumURL, "play-all");});
 
-	bottomPageSweeps.addEventListener("click", function() {
-		//console.log("bottom of the page sweeps");
-		openURL (siteData.sweepsURL, "open-sweeps");
-	});
+	bottomPageSweeps.addEventListener("click", function() {openURL (siteData.sweepsURL, "open-sweeps");});
 
-	var menuStats = false;
-
-	cBtn.addEventListener("click", function() {
-		showHideDD ("hide");
-	});
+	cBtn.addEventListener("click", function() { showHideDD ("hide");});
 
 
 	mBtn.addEventListener("click", function() {
-		//console.log("yo MTV");
 		if (menuStats == false) {
 			showHideDD ("show");
 		}
@@ -88,42 +86,5 @@ function init () {
 
 
 
+init();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-window.onload = function() {
-	init();
-};
