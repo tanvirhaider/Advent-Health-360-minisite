@@ -1,7 +1,23 @@
 # Advent Health Virtual Race Day Experience
 
-xxxxxxxx
+## Updating Social Sharing Options
+```
+	<!-- Twitter elements -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="AdventHealth | Virtual Race Day Experience">
+	<meta name="twitter:url" content="http://www.DaytonaRaceDay.com">
+	<meta name="twitter:site" content="">
 
+	<!-- Open Graph elements  -->
+	<meta property="og:site_name" content="DaytonaRaceDay">
+	<meta property="og:title" content="AdventHealth | Virtual Race Day Experience">
+	<meta property="og:description" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="http://www.DaytonaRaceDay.com">
+```
+
+please update the twitter and Open Graph data at the <head> of the index.html
 
 ## Updating URLS
 
