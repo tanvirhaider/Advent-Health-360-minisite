@@ -1,0 +1,25 @@
+
+
+.closeBtn-style {
+    width: 1px;
+    height: 1px;
+    background-size: contain;
+   // background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(../assets/images/closeBtn-white.png);
+    top: 30px;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: auto;
+    display: none;
+    z-index: 99999;
+
+    @include breakpoint (mobile) {
+       // display: none;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        
+    }
+}

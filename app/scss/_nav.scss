@@ -1,0 +1,48 @@
+
+
+    nav {
+        position: absolute;
+        width: calc(100% - 20px);
+        max-width: 940px;
+        left: 0px;
+        right: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 99999;
+        opacity: 0;
+        animation: 1.5s fadein 0.75s forwards;
+
+        @include breakpoint (mobile) {
+            height: 100%;
+            pointer-events: none;
+        }
+
+        @import 'dropdown';
+
+        .homesitelinkout {
+            color: white;
+            background-color: #005F97;
+            width: 200px;
+            height: 33px;
+            position: absolute;
+            border: unset;
+           // font-family: Arial, Helvetica, sans-serif;
+           //\ font-family: 'Proxima-Thin';
+            font-family: 'Proxima-Regular';
+           -webkit-font-smoothing: antialiased;
+           -moz-osx-font-smoothing: grayscale;
+            font-size: 14px;
+            border-radius: 15px;
+            top: 30px;
+            right: 0px;
+            letter-spacing: 1px;
+
+            @include breakpoint (mobile) {
+                display: none;
+            }
+        }
+
+       @import 'menu-icon';
+       @import 'closeBtn';
+    
+    }

@@ -1,0 +1,124 @@
+
+
+#dropdown {
+    position: relative;
+    top: 60px;
+    left: -15px;
+    visibility: hidden;
+   // transition: ease 0.5s;
+    // opacity: 0;
+    // animation: 0.5s fadein 0s forwards;
+
+    .mobile-dropdown-logo {
+        visibility: hidden;
+        position: absolute;
+        height: 1px;
+        width: 1px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain;
+        left: 0px;
+        right: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+
+        @include breakpoint (mobile) {
+            visibility: visible;
+            background-image: url(../assets/images/mobile-logo@2x.png);
+            width: 234px;
+            height: 155px;
+            pointer-events: auto;
+            
+        }
+    }
+
+    @include breakpoint (mobile) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(#005e97,1) 0%,rgba(110,44,99,1) 50%); 
+        top: 0px;
+        left: 0px;
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    ul {
+        list-style-type: none;
+
+        @include breakpoint (mobile) {
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            top: 200px;
+        }
+        
+        li {
+            color: black;
+            //font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Proxima-Regular';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            height: 55px;
+            width: 216px;
+            background-color: white;
+            position: relative;
+            padding-left: 15px;
+            padding-top: 16px;
+            box-sizing: border-box;
+            margin-bottom: 2px;
+            pointer-events: auto;
+            
+
+            &:after {
+                content: "";
+                background-image: url(../assets/images/arrow-right-black.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                right: 10px;
+                top: 17px;
+                
+                
+
+                @include breakpoint (mobile) {
+                    background-image: url(../assets/images/arrow-right.svg);
+                    top: 25px;
+                    right: 20px;
+                }
+            }
+
+            &:hover {
+                background-color: rgba(rgb(215, 238, 252),1);
+            }
+
+            @include breakpoint (mobile) {
+                background-color: unset;
+                color: white;
+                width: 100%;
+                padding-left: 30px;
+                font-size: 24px;
+                height: 75px;
+                pointer-events: auto;
+                margin-top: unset;
+
+                &:first-child {
+                    border-bottom: 3px solid rgba(0,0,0,0.1);
+                   // margin-bottom: 20px;
+                }
+
+                &:hover {
+                  //  background-color: rgba(rgb(215, 238, 252),1);
+                  //  color: #005F97;
+
+                    background-color: unset;
+                    color: white;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,58 @@
+
+  footer {
+    opacity: 0;
+    animation: 1.5s fadein 1s forwards;
+   
+    .footercopy {
+        color: white;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        //font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        background-color: rgba(0,0,0,0);
+        top: 50px;
+        font-family: 'Proxima-Regular';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: 1px;
+
+        @include breakpoint (mobile) {
+            color: rgb(255, 255, 255);
+            top: unset;
+            bottom: 20px;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px;
+            //top: unset;
+        }
+    }
+
+    .homesitelinkout  {
+        display: none;
+
+        @include breakpoint (mobile) {
+            display: block;
+            color: white;
+            background-color: #005F97;
+            width: 200px;
+            height: 33px;
+            position: absolute;
+            border: unset;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            border-radius: 15px;
+            left: 0px;
+            right: 0px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @include breakpoint (mobile) {
+        margin-bottom: 140px;
+        top: -25px;          
+    }
+}

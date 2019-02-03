@@ -13,7 +13,45 @@ var vimeoURLlist = [
 
 function init () {
 	var mBtn = document.getElementById("menuicon");
+	var cBtn = document.getElementById("closeBtn");
+	var heroPlayAllBtn = document.getElementById("hero-play-all");
+	var bottomPageSweeps = document.getElementById("bottom-sweeps");
+	var bottomclientClickOut = document.getElementById("bottom-client");
+	var ddclient = document.getElementById("dropdown-client");
+	var ddsweeps = document.getElementById("dropdown-sweeps");
+	var ddlogo = document.getElementById("dropdown-logo");
+
+	ddclient.addEventListener("click", function() {
+		console.log("dropdown client click out");
+	});
+
+	ddlogo.addEventListener("click", function() {
+		console.log("dropdown logo");
+	});
+
+	ddsweeps.addEventListener("click", function() {
+		console.log("dropdown sweeps");
+	});
+
+	bottomclientClickOut.addEventListener("click", function() {
+		console.log("bottom of the page client click out");
+	});
+
+	heroPlayAllBtn.addEventListener("click", function() {
+		console.log("hero play all");
+	});
+
+	bottomPageSweeps.addEventListener("click", function() {
+		console.log("bottom of the page sweeps");
+	});
+
 	var menuStats = false;
+
+	cBtn.addEventListener("click", function() {
+		showHideDD ("hide");
+	});
+
+
 	mBtn.addEventListener("click", function() {
 		//console.log("yo MTV");
 		if (menuStats == false) {
@@ -45,10 +83,12 @@ function init () {
 	function showHideDD ( whichOne ) {
 		if (whichOne == "show") {
 			document.getElementById("dropdown").style.visibility = "visible";
+			document.getElementById("closeBtn").style.display = "block";
 			menuStats = true;
 		}
 		else {
 			document.getElementById("dropdown").style.visibility = "hidden";
+			document.getElementById("closeBtn").style.display = "none";
 			menuStats = false;
 		}
 	}

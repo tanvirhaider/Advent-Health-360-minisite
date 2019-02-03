@@ -110,19 +110,22 @@ body {
       body nav #dropdown .mobile-dropdown-logo {
         visibility: hidden;
         position: absolute;
-        height: 155px;
+        height: 1px;
+        width: 1px;
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: contain;
         left: 0px;
         right: 0px;
         margin-left: auto;
-        margin-right: auto; }
+        margin-right: auto;
+        overflow: hidden; }
         @media (max-width: 767px) {
           body nav #dropdown .mobile-dropdown-logo {
             visibility: visible;
             background-image: url(../assets/images/mobile-logo@2x.png);
             width: 234px;
+            height: 155px;
             pointer-events: auto; } }
       @media (max-width: 767px) {
         body nav #dropdown {
@@ -218,6 +221,24 @@ body {
       pointer-events: auto; }
       @media (max-width: 767px) {
         body nav .menuicon {
+          top: 20px;
+          right: 20px;
+          width: 20px;
+          height: 20px; } }
+    body nav .closeBtn-style {
+      width: 1px;
+      height: 1px;
+      background-size: contain;
+      background-position: 50% 50%;
+      background-image: url(../assets/images/closeBtn-white.png);
+      top: 30px;
+      position: absolute;
+      cursor: pointer;
+      pointer-events: auto;
+      display: none;
+      z-index: 99999; }
+      @media (max-width: 767px) {
+        body nav .closeBtn-style {
           top: 20px;
           right: 20px;
           width: 20px;

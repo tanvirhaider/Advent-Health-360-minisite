@@ -1,0 +1,37 @@
+
+
+ .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .bgshade {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(#005e97,0) 0%,rgba(110,44,99,1) 100%); 
+        opacity: 0;
+        animation: 0.5s fadein 0s forwards;
+        //opacity: 0.5;
+
+        @include breakpoint (mobile) {
+            background: linear-gradient(to bottom, rgba(#005e97,1) 0%,rgba(110,44,99,1) 100%); 
+        }
+    }
+
+    .bgimg {
+        background-image: url(../assets/images/bg-img.jpg);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        opacity: 0;
+        animation: 1s fadein 0.5s forwards;
+
+        @include breakpoint (mobile) {
+            display: none;
+         }
+    }
+}
