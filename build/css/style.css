@@ -94,10 +94,7 @@ body {
     right: 0px;
     margin-left: auto;
     margin-right: auto;
-    z-index: 99999;
-    opacity: 0;
-    -webkit-animation: 1.5s fadein 0.75s forwards;
-            animation: 1.5s fadein 0.75s forwards; }
+    z-index: 99999; }
     @media (max-width: 767px) {
       body nav {
         height: 100%;
@@ -269,10 +266,7 @@ body {
       width: 100%;
       height: 530px;
       background-color: rgba(110, 44, 99, 0.75);
-      border-radius: 6px;
-      opacity: 0;
-      -webkit-animation: 0.5s fadein 0.5s forwards;
-              animation: 0.5s fadein 0.5s forwards; }
+      border-radius: 6px; }
       @media (max-width: 767px) {
         body .hero .hero-box {
           background-color: unset;
@@ -517,10 +511,7 @@ body {
       background-color: white;
       font-family: 'Proxima-Regular';
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      opacity: 0;
-      -webkit-animation: 0.5s fadein 0.75s forwards;
-              animation: 0.5s fadein 0.75s forwards; }
+      -moz-osx-font-smoothing: grayscale; }
       @media (max-width: 767px) {
         body .hero .hero-playall {
           bottom: unset;

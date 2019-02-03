@@ -27,8 +27,8 @@
         height: 530px;
         background-color: rgba(#6E2C63,0.75);
         border-radius: 6px;
-        opacity: 0;
-        animation: 0.5s fadein 0.5s forwards;
+       // opacity: 0;
+       // animation: 0.5s fadein 0.5s forwards;
 
         @include breakpoint (mobile) {
             background-color: unset;
@@ -66,8 +66,8 @@
             
             li {
                 box-sizing: border-box;
-                opacity: 0;
-                animation: 1s fadein 0.5s forwards;
+               opacity: 0;
+               animation: 1s fadein 0.5s forwards;
                 //animation: ease-in-out slidein 1.0s forwards;
 
                 &:hover {
@@ -247,13 +247,14 @@
         margin-right: auto;
         top: -102px;
         z-index: 999;
-        opacity: 0;
-        animation: 0.5s fadein 0.75s forwards;
+       opacity: 0;
+       animation: 0.5s fadein 0.75s forwards;
 
         @include breakpoint (mobile) {
             background-image: url(../assets/images/mobile-logo@2x.png);
             top: -200px;
             width: 234px;
+           // animation: 1.5s fadein 0.75s forwards;
         }
 
         @include breakpoint (tablet) {
@@ -281,8 +282,8 @@
         font-family: 'Proxima-Regular';
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        opacity: 0;
-        animation: 0.5s fadein 0.75s forwards;
+       // opacity: 0;
+      //  animation: 0.5s fadein 0.75s forwards;
 
         @include breakpoint (mobile) {
             bottom: unset;

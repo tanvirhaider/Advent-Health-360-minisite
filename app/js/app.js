@@ -9,7 +9,16 @@ var vimeoURLlist = [
 	"https://vimeo.com/314891771",
 	"https://vimeo.com/314891809",
 	"https://vimeo.com/314891829"
-]
+];
+
+var clientURL = "https://www.adventhealth.com";
+var contentURL = "http://YourChampionforHealth.com"
+
+function openURL (url,trackingString) {
+	window.open(url);
+	gtag('event', trackingString);
+	console.log("tracking string: ",trackingString);
+}
 
 function init () {
 	var mBtn = document.getElementById("menuicon");
@@ -22,19 +31,23 @@ function init () {
 	var ddlogo = document.getElementById("dropdown-logo");
 
 	ddclient.addEventListener("click", function() {
-		console.log("dropdown client click out");
+		//console.log("dropdown client click out");
+		openURL (clientURL, "client-logo");
 	});
 
 	ddlogo.addEventListener("click", function() {
-		console.log("dropdown logo");
+		//console.log("dropdown logo");
+		openURL (clientURL, "client-logo");
 	});
 
 	ddsweeps.addEventListener("click", function() {
-		console.log("dropdown sweeps");
+		//console.log("dropdown sweeps");
+		openURL (contentURL, "open-sweeps");
 	});
 
 	bottomclientClickOut.addEventListener("click", function() {
-		console.log("bottom of the page client click out");
+		//console.log("bottom of the page client click out");
+		openURL (clientURL, "client-logo");
 	});
 
 	heroPlayAllBtn.addEventListener("click", function() {
@@ -42,7 +55,8 @@ function init () {
 	});
 
 	bottomPageSweeps.addEventListener("click", function() {
-		console.log("bottom of the page sweeps");
+		//console.log("bottom of the page sweeps");
+		openURL (contentURL, "open-sweeps");
 	});
 
 	var menuStats = false;
@@ -76,7 +90,8 @@ function init () {
 		var vidIndex = Number(event.target.dataset.indexNumber);
 		var vidURL = vimeoURLlist[vidIndex];
 		showHideDD ("hide");
-		window.open(vidURL);
+		//window.open(vidURL);
+		openURL (vidURL, "vid-" + vidIndex);
 		
 	}
 
@@ -85,11 +100,13 @@ function init () {
 			document.getElementById("dropdown").style.visibility = "visible";
 			document.getElementById("closeBtn").style.display = "block";
 			menuStats = true;
+			gtag('event', 'show-menu');
 		}
 		else {
 			document.getElementById("dropdown").style.visibility = "hidden";
 			document.getElementById("closeBtn").style.display = "none";
 			menuStats = false;
+			gtag('event', 'hide-menu');
 		}
 	}
 

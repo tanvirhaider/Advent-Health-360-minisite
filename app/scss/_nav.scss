@@ -9,8 +9,8 @@
         margin-left: auto;
         margin-right: auto;
         z-index: 99999;
-        opacity: 0;
-        animation: 1.5s fadein 0.75s forwards;
+        // opacity: 0;
+        // animation: 1.5s fadein 0.75s forwards;
 
         @include breakpoint (mobile) {
             height: 100%;
