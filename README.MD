@@ -22,8 +22,9 @@ please update the twitter and Open Graph data at the "head" of the index.html
 ## Updating URLS
 
 ```
-	<script>
-	var siteData = {
+	ar siteData = {
+		version: "iframe",					// "iframe", "standard"	
+		platform: "youtube",  				// "youtube", "vimeo"
 		vimeoURLlist: [
 			"https://vimeo.com/314887001",	// garage
 			"https://vimeo.com/314890554",	// fanzone
@@ -34,10 +35,21 @@ please update the twitter and Open Graph data at the "head" of the index.html
 			"https://vimeo.com/314891809",	// hot pass
 			"https://vimeo.com/314891829"	// victory lane
 		],
+		youtubeURLlist: [
+			"QKm-SOOMC4c",	// garage
+			"ywoe0obYaLU",	// fanzone
+			"_Uf0USAW-U8",	// driver introductions
+			"-xNN-bJQ4vI",	// parade lap
+			"qaTvddhJtTA",	// start your engines
+			"HqmBa8FPMx8",	// pit road
+			"Z3ILot5QJzM",	// hot pass
+			"12otR342ijc"	// victory lane
+		],
+		youtubePlayListURL: "https://vimeo.com/manage/albums/5729898",
 		vimeoAlbumURL: "https://vimeo.com/manage/albums/5729898",
 		clientURL: "https://www.adventhealth.com",
 		sweepsURL: "http://YourChampionforHealth.com"
-	} </script>
+	} 
 ```
 
 please update the siteData javacript object located in the "head" of the index.html file
