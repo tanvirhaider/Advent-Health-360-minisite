@@ -23,8 +23,8 @@ please update the twitter and Open Graph data at the "head" of the index.html
 
 ```
 	ar siteData = {
-		version: "iframe",					// "iframe", "standard"	
-		platform: "youtube",  				// "youtube", "vimeo"
+		version: "iframe",		// "iframe", "standard"	
+		platform: "youtube",  	// "youtube", "vimeo"
 		vimeoURLlist: [
 			"https://vimeo.com/314887001",	// garage
 			"https://vimeo.com/314890554",	// fanzone
