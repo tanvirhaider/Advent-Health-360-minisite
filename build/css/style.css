@@ -203,7 +203,8 @@ body {
       top: 30px;
       right: 0px;
       letter-spacing: 1px;
-      cursor: pointer; }
+      cursor: pointer;
+      outline: unset; }
       @media (max-width: 767px) {
         body nav .homesitelinkout {
           display: none; } }
@@ -513,7 +514,8 @@ body {
       background-color: white;
       font-family: 'Proxima-Regular';
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
+      -moz-osx-font-smoothing: grayscale;
+      outline: unset; }
       @media (max-width: 767px) {
         body .hero .hero-playall {
           bottom: unset;
@@ -686,6 +688,13 @@ body {
         body #vid-overlay iframe {
           height: 60%;
           width: 100%; } }
+    body #vid-overlay .iframeBG-style {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: auto;
+      cursor: pointer; }
     body #vid-overlay .youtube-closeBtn-style {
       width: 30px;
       height: 30px;

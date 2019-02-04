@@ -46,7 +46,19 @@
 	// } 
 
 	var siteData = {
+		version: "iframe",					// "iframe", "standard"	
+		platform: "youtube",  				// "youtube", "vimeo"
 		vimeoURLlist: [
+			"https://vimeo.com/314887001",	// garage
+			"https://vimeo.com/314890554",	// fanzone
+			"https://vimeo.com/314891691",	// driver introductions
+			"https://vimeo.com/314891724",	// parade lap
+			"https://vimeo.com/314891741",	// start your engines
+			"https://vimeo.com/314891771",	// pit road
+			"https://vimeo.com/314891809",	// hot pass
+			"https://vimeo.com/314891829"	// victory lane
+		],
+		youtubeURLlist: [
 			"QKm-SOOMC4c",	// garage
 			"ywoe0obYaLU",	// fanzone
 			"_Uf0USAW-U8",	// driver introductions
@@ -56,6 +68,7 @@
 			"Z3ILot5QJzM",	// hot pass
 			"12otR342ijc"	// victory lane
 		],
+		youtubePlayListURL: "https://vimeo.com/manage/albums/5729898",
 		vimeoAlbumURL: "https://vimeo.com/manage/albums/5729898",
 		clientURL: "https://www.adventhealth.com",
 		sweepsURL: "http://YourChampionforHealth.com"
@@ -155,7 +168,7 @@
 		<button class="sweeps-btn">ENTER TO WIN!</button>
 	</section>
 
-	 <div id="vid-overlay"></div>
+	 <section id="vid-overlay"></section>
 
 	<footer>
 		<button id="bottom-client" class="homesitelinkout">AdventHealth.com  ></button>

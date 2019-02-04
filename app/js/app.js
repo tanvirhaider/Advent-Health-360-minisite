@@ -22,15 +22,19 @@ function createYoutubeIframe (videoFile,index) {
 	iframe.setAttribute('allow',"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
 	iframe.className += "youtube-iframe-style";
 	iframe.src = 'https://www.youtube.com/embed/' + videoFile;
-	
-
 	iframeContainer.appendChild(iframe);
+
+	var iframeBG = document.createElement("iframeBG");
+	iframeBG.className += "iframeBG-style";
+	iframeContainer.appendChild(iframeBG);
+	iframeContainer.addEventListener("click", closeIframe);
 
 	var iframeCloseBtn = document.createElement("iframeCloseBtn");
 	iframeCloseBtn.className += "youtube-closeBtn-style";
 	iframeContainer.appendChild(iframeCloseBtn);
-	iframeCloseBtn.addEventListener("click", function() {
-		//iframeContainer.removeChild();
+	iframeCloseBtn.addEventListener("click", closeIframe);
+
+	function closeIframe (event) {
 		var numberOfChildren = iframeContainer.childElementCount;
 		console.log(numberOfChildren);
 
@@ -41,12 +45,7 @@ function createYoutubeIframe (videoFile,index) {
 		}
 
 		iframeContainer.style.display = "none";
-	});
-
-	//<iframe  src="https://www.youtube.com/embed/QKm-SOOMC4c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-	//document.write('<iframe width="1280" height="720" id="vid-' + index + '" src="https://www.youtube.com/embed/' + videoFile + '" " frameborder="0" webkitAllowFullScreen="1" mozallowfullscreen="1" allowFullScreen="1" allowtransparency="true"></iframe>');
-
+	}
 }
 
 function init () {
@@ -77,7 +76,15 @@ function init () {
 
 	bottomclientClickOut.addEventListener("click", function() {openURL (siteData.clientURL, "client-logo");});
 
-	heroPlayAllBtn.addEventListener("click", function() {openURL(siteData.vimeoAlbumURL, "play-all");});
+	heroPlayAllBtn.addEventListener("click", function() {
+		if (siteData.platform == "youtube") {
+			openURL(siteData.youtubePlayListURL, "play-all");
+		}
+
+		else if (siteData.platform == "vimeo") {
+			openURL(siteData.vimeoAlbumURL, "play-all");
+		}
+	});
 
 	bottomPageSweeps.addEventListener("click", function() {openURL (siteData.sweepsURL, "open-sweeps");});
 
@@ -102,12 +109,15 @@ function init () {
 
 	function whenThumbClicked (event) {
 		var vidIndex = Number(event.target.dataset.indexNumber);
-		var vidURL = siteData.vimeoURLlist[vidIndex];
+		var vidURL = siteData.youtubeURLlist[vidIndex];
 		showHideDD ("hide");
-		//openURL (vidURL, "vid-" + vidIndex);
 
-		createYoutubeIframe (vidURL,vidIndex);
-		
+		if (siteData.version == "iframe") {
+			createYoutubeIframe (vidURL,vidIndex);
+		}
+		else {
+			openURL ("https://www.youtube.com/watch?v=" + vidURL, "vid-" + vidIndex);
+		}
 	}
 
 	function showHideDD ( whichOne ) {

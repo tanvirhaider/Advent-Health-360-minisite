@@ -63,6 +63,16 @@ body {
 
         }
 
+        .iframeBG-style {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            //background-color: pink;
+            z-index: -1;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
         .youtube-closeBtn-style {
             width: 30px;
             height: 30px;
