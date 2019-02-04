@@ -13,6 +13,8 @@ function openURL (url,trackingString) {
 function createOmniVirtIframe (videoFile, index) {
 	console.log("create omnivirt video");
 
+	document.getElementById("footerElements").style.display = "none";
+
 	var iframeContainer = document.getElementById("vid-overlay");
 	iframeContainer.style.display = "block";
 	var iframe = document.createElement('iframe');
@@ -38,6 +40,7 @@ function createOmniVirtIframe (videoFile, index) {
 	function closeIframe (event) {
 		var numberOfChildren = iframeContainer.childElementCount;
 		console.log(numberOfChildren);
+		document.getElementById("footerElements").style.display = "block";
 
 		for (var i = 0; i < numberOfChildren; i++) {
 			var tempChild = iframeContainer.firstChild;
@@ -49,7 +52,15 @@ function createOmniVirtIframe (videoFile, index) {
 	}
 
 	OmniVirt.api.receiveMessage('loaded', function(type, data, iframe) { 
-		if (iframe.attr('id') == 'ado-' + videoFile)   OmniVirt.api.sendMessage('cardboard', 'on', iframe); 
+		if (iframe.attr('id') == 'ado-' + videoFile)  {
+			if (window.innerWidth < 1024) {
+				OmniVirt.api.sendMessage('cardboard', 'on', iframe); 
+				
+			}
+
+		//	OmniVirt.api.sendMessage('ended', function(){console.log("video ended")}); 
+			
+		}
 	});
 
 
@@ -170,6 +181,14 @@ function init () {
 		else if (siteData.platform == "vimeo") {
 			openURL(siteData.vimeoAlbumURL, "play-all");
 		}
+
+		else if (siteData.platform == "omnivirt") {
+			//openURL(siteData.vimeoAlbumURL, "play-all");
+			//vidURL = siteData.omnivirtURLList[0];
+			createOmniVirtIframe (siteData.omnivirtURLList[0],"");
+		}
+
+
 	});
 
 	bottomPageSweeps.addEventListener("click", function() {openURL (siteData.sweepsURL, "open-sweeps");});
