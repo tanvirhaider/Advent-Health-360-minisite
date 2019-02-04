@@ -109,15 +109,26 @@ function init () {
 
 	function whenThumbClicked (event) {
 		var vidIndex = Number(event.target.dataset.indexNumber);
-		var vidURL = siteData.youtubeURLlist[vidIndex];
+		var vidURL;
+		
 		showHideDD ("hide");
 
-		if (siteData.version == "iframe") {
-			createYoutubeIframe (vidURL,vidIndex);
+		if (siteData.platform == "youtube") {
+
+			vidURL = siteData.youtubeURLlist[vidIndex];
+			if (siteData.version == "iframe") {
+				createYoutubeIframe (vidURL,vidIndex);
+			}
+			else {
+				openURL ("https://www.youtube.com/watch?v=" + vidURL, "vid-" + vidIndex);
+			}
 		}
 		else {
-			openURL ("https://www.youtube.com/watch?v=" + vidURL, "vid-" + vidIndex);
+			vidURL = siteData.vimeoURLlist[vidIndex];
+			openURL (vidURL, "vid-" + vidIndex);
 		}
+
+		
 	}
 
 	function showHideDD ( whichOne ) {
