@@ -48,6 +48,45 @@ function createYoutubeIframe (videoFile,index) {
 	}
 }
 
+function createVimeoIframe (videoFile, index) {
+
+	console.log(videoFile);
+	var iframeContainer = document.getElementById("vid-overlay");
+	iframeContainer.style.display = "block";
+	var iframe = document.createElement('iframe');
+	iframe.setAttribute('id', "vimeo-iframe-" + index);
+	iframe.setAttribute('frameborder', "0");
+	iframe.setAttribute('allowfullscreen',"");
+	iframe.setAttribute('webkitallowfullscreen',"");
+	iframe.setAttribute('mozallowfullscreen',"");
+	iframe.className += "vimeo-iframe-style";
+	iframe.src = 'https://player.vimeo.com/video/' + videoFile;
+	iframeContainer.appendChild(iframe);
+
+	var iframeBG = document.createElement("iframeBG");
+	iframeBG.className += "iframeBG-style";
+	iframeContainer.appendChild(iframeBG);
+	iframeContainer.addEventListener("click", closeIframe);
+
+	var iframeCloseBtn = document.createElement("iframeCloseBtn");
+	iframeCloseBtn.className += "youtube-closeBtn-style";
+	iframeContainer.appendChild(iframeCloseBtn);
+	iframeCloseBtn.addEventListener("click", closeIframe);
+
+	function closeIframe (event) {
+		var numberOfChildren = iframeContainer.childElementCount;
+		console.log(numberOfChildren);
+
+		for (var i = 0; i < numberOfChildren; i++) {
+			var tempChild = iframeContainer.firstChild;
+			iframeContainer.removeChild(tempChild);
+			console.log(tempChild);
+		}
+
+		iframeContainer.style.display = "none";
+	}
+}
+
 function init () {
 
 	var menuStats = false;
@@ -116,6 +155,7 @@ function init () {
 		if (siteData.platform == "youtube") {
 
 			vidURL = siteData.youtubeURLlist[vidIndex];
+
 			if (siteData.version == "iframe") {
 				createYoutubeIframe (vidURL,vidIndex);
 			}
@@ -125,7 +165,13 @@ function init () {
 		}
 		else {
 			vidURL = siteData.vimeoURLlist[vidIndex];
-			openURL (vidURL, "vid-" + vidIndex);
+			
+			if (siteData.version == "iframe") {
+				createVimeoIframe (vidURL,vidIndex);
+			}
+			else {
+				openURL ("https://vimeo.com/" + vidURL, "vid-" + vidIndex);
+			}
 		}
 
 		
