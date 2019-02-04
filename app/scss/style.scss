@@ -25,68 +25,6 @@ body {
     @import 'hero';
     @import 'sweeps';
     @import 'footer';
+    @import 'vidoverlay';
 
-
-    #vid-overlay {
-        position: absolute;
-        z-index: 999009;
-        width: 100%;
-        height: 100%;
-        top: 0px;
-        left: 0px;
-        background-color: rgba(0,0,0,0.8);
-        display: none;
-
-        @include breakpoint (mobile) {
-            height: 100vh;
-            width: 100vw;
-            position: fixed;
-        }
-
-        iframe {
-            position: absolute;
-            margin: auto;
-            max-width: 1280px;
-            max-height: 720px;
-            width: 100%;
-            height: 100%;
-            left: 0px;
-            right: 0px;
-            top: 0px;
-            bottom: 0px;
-            
-
-            @include breakpoint (mobile) {
-                height: 60%;
-                width: 100%;
-            }
-
-        }
-
-        .iframeBG-style {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            //background-color: pink;
-            z-index: -1;
-            pointer-events: auto;
-            cursor: pointer;
-        }
-
-        .youtube-closeBtn-style {
-            width: 30px;
-            height: 30px;
-            background-image: url(../assets/images/closeBtn-white.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            z-index: 9999999;
-            top: 20px;
-            right: 20px;
-            pointer-events: auto;
-            cursor: pointer;
-        }
-    }
-
-  
 }

@@ -549,6 +549,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/app/scss/_vidoverlay.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/build/scss/_vidoverlay.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/app/scss/style.scss": {
 		"aP": 1,
 		"bl": 0,

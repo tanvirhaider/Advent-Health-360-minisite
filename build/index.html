@@ -26,12 +26,27 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125434262-2"></script>
 	<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-125434262-2'); </script>
+	<script type="text/javascript" src="//remote.vroptimal-3dx-assets.com/scripts/vroptimal.js"></script>
 	<!-- end of Google Analytics init code  -->
+
+
+
 
 <script>
 	var siteData = {
 		version: "iframe",		// "iframe", "standard"	
-		platform: "youtube",  	// "youtube", "vimeo"
+		platform: "omnivirt",  	// "youtube", "vimeo", "omnivirt"
+		omnivirtURLList: [
+			"31182",	// garage
+			"31183",	// fanzone
+			"31184",	// driver introductions
+			"314891724",	// parade lap
+			"314891741",	// start your engines
+			"314891771",	// pit road
+			"314891809",	// hot pass
+			"314891829"		// victory lane
+		],
+
 		vimeoURLlist: [
 			"314887001",	// garage
 			"314890554",	// fanzone
@@ -42,6 +57,7 @@
 			"314891809",	// hot pass
 			"314891829"		// victory lane
 		],
+
 		youtubeURLlist: [
 			"QKm-SOOMC4c",	// garage
 			"ywoe0obYaLU",	// fanzone
@@ -52,6 +68,7 @@
 			"Z3ILot5QJzM",	// hot pass
 			"12otR342ijc"	// victory lane
 		],
+		
 		youtubePlayListURL: "https://vimeo.com/manage/albums/5729898",
 		vimeoAlbumURL: "https://vimeo.com/manage/albums/5729898",
 		clientURL: "https://www.adventhealth.com",
@@ -159,6 +176,17 @@
 
 	<script src="js/app-min.js" type="text/javascript"></script>  
 
+<!-- <iframe id="ado-31182" src="about:blank" frameborder="0" width="320" height="320" webkitAllowFullScreen="1" mozallowfullscreen="1" allowFullScreen="1"></iframe>
+<script type="text/javascript">
+	document.getElementById("ado-31182").setAttribute("src", "//www.vroptimal-3dx-assets.com/content/31182?player=true&autoplay=true&referer=" + encodeURIComponent(window.location.href));
+</script> -->
+
+
+
+<!-- <script type="text/javascript">
+	 OmniVirt.api.receiveMessage('loaded', function(type, data, iframe) { 
+		 if (iframe.attr('id') == 'ado-31182')   OmniVirt.api.sendMessage('cardboard', 'on', iframe); });
+</script>  -->
 
 	<!-- <iframe width="1280" height="720" src="https://www.youtube.com/embed/QKm-SOOMC4c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
     

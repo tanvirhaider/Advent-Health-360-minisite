@@ -695,7 +695,7 @@ body {
       z-index: -1;
       pointer-events: auto;
       cursor: pointer; }
-    body #vid-overlay .youtube-closeBtn-style {
+    body #vid-overlay .closeBtn-style {
       width: 30px;
       height: 30px;
       background-image: url(../assets/images/closeBtn-white.png);

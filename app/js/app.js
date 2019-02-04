@@ -8,6 +8,53 @@ function openURL (url,trackingString) {
 	console.log("tracking string: ",trackingString);
 }
 
+
+
+function createOmniVirtIframe (videoFile, index) {
+	console.log("create omnivirt video");
+
+	var iframeContainer = document.getElementById("vid-overlay");
+	iframeContainer.style.display = "block";
+	var iframe = document.createElement('iframe');
+	iframe.setAttribute('id', "ado-" + videoFile );
+	iframe.setAttribute('frameborder', "0");
+	iframe.setAttribute('webkitAllowFullScreen',"1");
+	iframe.setAttribute('mozallowfullscreen',"1");
+	iframe.setAttribute('allowFullScreen',"1");
+	iframe.setAttribute("src","//www.vroptimal-3dx-assets.com/content/"+videoFile+"?player=true&autoplay=true&referer=" + encodeURIComponent(window.location.href));
+	iframeContainer.appendChild(iframe);
+
+
+	var iframeBG = document.createElement("iframeBG");
+	iframeBG.className += "iframeBG-style";
+	iframeContainer.appendChild(iframeBG);
+	iframeContainer.addEventListener("click", closeIframe);
+
+	var iframeCloseBtn = document.createElement("iframeCloseBtn");
+	iframeCloseBtn.className += "closeBtn-style";
+	iframeContainer.appendChild(iframeCloseBtn);
+	iframeCloseBtn.addEventListener("click", closeIframe);
+
+	function closeIframe (event) {
+		var numberOfChildren = iframeContainer.childElementCount;
+		console.log(numberOfChildren);
+
+		for (var i = 0; i < numberOfChildren; i++) {
+			var tempChild = iframeContainer.firstChild;
+			iframeContainer.removeChild(tempChild);
+			console.log(tempChild);
+		}
+
+		iframeContainer.style.display = "none";
+	}
+
+	OmniVirt.api.receiveMessage('loaded', function(type, data, iframe) { 
+		if (iframe.attr('id') == 'ado-' + videoFile)   OmniVirt.api.sendMessage('cardboard', 'on', iframe); 
+	});
+
+
+}
+
 function createYoutubeIframe (videoFile,index) {
 	console.log(videoFile);
 
@@ -30,7 +77,7 @@ function createYoutubeIframe (videoFile,index) {
 	iframeContainer.addEventListener("click", closeIframe);
 
 	var iframeCloseBtn = document.createElement("iframeCloseBtn");
-	iframeCloseBtn.className += "youtube-closeBtn-style";
+	iframeCloseBtn.className += "closeBtn-style";
 	iframeContainer.appendChild(iframeCloseBtn);
 	iframeCloseBtn.addEventListener("click", closeIframe);
 
@@ -69,7 +116,7 @@ function createVimeoIframe (videoFile, index) {
 	iframeContainer.addEventListener("click", closeIframe);
 
 	var iframeCloseBtn = document.createElement("iframeCloseBtn");
-	iframeCloseBtn.className += "youtube-closeBtn-style";
+	iframeCloseBtn.className += "closeBtn-style";
 	iframeContainer.appendChild(iframeCloseBtn);
 	iframeCloseBtn.addEventListener("click", closeIframe);
 
@@ -163,11 +210,22 @@ function init () {
 				openURL ("https://www.youtube.com/watch?v=" + vidURL, "vid-" + vidIndex);
 			}
 		}
-		else {
+		else if (siteData.platform == "vimeo") {
 			vidURL = siteData.vimeoURLlist[vidIndex];
 			
 			if (siteData.version == "iframe") {
 				createVimeoIframe (vidURL,vidIndex);
+			}
+			else {
+				openURL ("https://vimeo.com/" + vidURL, "vid-" + vidIndex);
+			}
+		}
+
+		else if (siteData.platform == "omnivirt") {
+			vidURL = siteData.omnivirtURLList[vidIndex];
+			
+			if (siteData.version == "iframe") {
+				createOmniVirtIframe (vidURL,vidIndex);
 			}
 			else {
 				openURL ("https://vimeo.com/" + vidURL, "vid-" + vidIndex);
