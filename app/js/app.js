@@ -8,6 +8,47 @@ function openURL (url,trackingString) {
 	console.log("tracking string: ",trackingString);
 }
 
+function createYoutubeIframe (videoFile,index) {
+	console.log(videoFile);
+
+	var iframeContainer = document.getElementById("vid-overlay");
+
+	iframeContainer.style.display = "block";
+
+	var iframe = document.createElement('iframe');
+	iframe.setAttribute('id', "youtube-iframe-" + index);
+	iframe.setAttribute('frameborder', "0");
+	iframe.setAttribute('allowfullscreen',"");
+	iframe.setAttribute('allow',"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+	iframe.className += "youtube-iframe-style";
+	iframe.src = 'https://www.youtube.com/embed/' + videoFile;
+	
+
+	iframeContainer.appendChild(iframe);
+
+	var iframeCloseBtn = document.createElement("iframeCloseBtn");
+	iframeCloseBtn.className += "youtube-closeBtn-style";
+	iframeContainer.appendChild(iframeCloseBtn);
+	iframeCloseBtn.addEventListener("click", function() {
+		//iframeContainer.removeChild();
+		var numberOfChildren = iframeContainer.childElementCount;
+		console.log(numberOfChildren);
+
+		for (var i = 0; i < numberOfChildren; i++) {
+			var tempChild = iframeContainer.firstChild;
+			iframeContainer.removeChild(tempChild);
+			console.log(tempChild);
+		}
+
+		iframeContainer.style.display = "none";
+	});
+
+	//<iframe  src="https://www.youtube.com/embed/QKm-SOOMC4c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	//document.write('<iframe width="1280" height="720" id="vid-' + index + '" src="https://www.youtube.com/embed/' + videoFile + '" " frameborder="0" webkitAllowFullScreen="1" mozallowfullscreen="1" allowFullScreen="1" allowtransparency="true"></iframe>');
+
+}
+
 function init () {
 
 	var menuStats = false;
@@ -63,7 +104,9 @@ function init () {
 		var vidIndex = Number(event.target.dataset.indexNumber);
 		var vidURL = siteData.vimeoURLlist[vidIndex];
 		showHideDD ("hide");
-		openURL (vidURL, "vid-" + vidIndex);
+		//openURL (vidURL, "vid-" + vidIndex);
+
+		createYoutubeIframe (vidURL,vidIndex);
 		
 	}
 
